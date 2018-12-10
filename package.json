@@ -1,0 +1,32 @@
+{
+  "name": "codic-mongo",
+  "version": "1.0.0",
+  "description": "Mongo db backed implementation for codic driver",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "install": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Osmandiyaka/codic-mongo.git"
+  },
+  "keywords": [
+    "codic"
+  ],
+  "author": "Osmandiyaka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Osmandiyaka/codic-mongo/issues"
+  },
+  "homepage": "https://github.com/Osmandiyaka/codic-mongo#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "lite-server": "^2.4.0",
+    "typescript": "^3.2.2"
+  }
+}
