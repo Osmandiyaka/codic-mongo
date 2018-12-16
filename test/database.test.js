@@ -34,25 +34,35 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
-var mongodb_1 = require("mongodb");
-var DbClient = /** @class */ (function () {
-    function DbClient() {
-    }
-    DbClient.prototype.connect = function (connectionString) {
-        return __awaiter(this, void 0, void 0, function () {
-            var db;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, mongodb_1.MongoClient.connect(connectionString)];
-                    case 1:
-                        db = _a.sent();
-                        this.db = db.db('codic');
-                        return [2 /*return*/, this.db];
-                }
-            });
+var chai_1 = require("chai");
+var task_impl_1 = require("../task-impl");
+exports.hello = function () { return 'Hello world!'; };
+describe('Hello function', function () {
+    it('should return hello world', function () { return __awaiter(_this, void 0, void 0, function () {
+        var result, re, task, tasks;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    result = exports.hello();
+                    chai_1.expect(result).to.equal('Hello world!');
+                    re = new task_impl_1.default("mongodb://localhost:27017/codic");
+                    task = {
+                        name: 'test Task',
+                        id: 122333,
+                        config: { priority: 1, status: 1 },
+                        definition: {}
+                    };
+                    return [4 /*yield*/, re.save(task)];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, re.all()];
+                case 2:
+                    tasks = _a.sent();
+                    console.log(tasks);
+                    return [2 /*return*/];
+            }
         });
-    };
-    return DbClient;
-}());
-exports.default = new DbClient();
+    }); });
+});

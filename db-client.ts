@@ -6,7 +6,7 @@ class DbClient {
 
     public async connect(connectionString: string): Promise<Db> {
         const db = await MongoClient.connect(connectionString);
-        this.db = db.db('codic');
+        this.db = db.db('');
         return this.db;
     }
 }

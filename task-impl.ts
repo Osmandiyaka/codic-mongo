@@ -13,7 +13,7 @@ export default class TaskImpl implements ITasks {
     }
 
 
-    async all(): Promise<Array<TaskModel>> {
+    async all(): Promise<TaskModel[]> {
         const db = await this.db;
         return db.collection(this.TASK_COLLECTION_NAME).find().toArray();
     }

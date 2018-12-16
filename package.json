@@ -4,7 +4,7 @@
   "description": "Mongo db backed implementation for codic driver",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
@@ -25,9 +25,14 @@
   },
   "homepage": "https://github.com/Osmandiyaka/codic-mongo#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
     "@types/mongodb": "^3.1.15",
+    "chai": "^4.2.0",
     "concurrently": "^4.1.0",
     "lite-server": "^2.4.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
   },
   "dependencies": {

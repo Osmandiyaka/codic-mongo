@@ -1,6 +1,7 @@
 
 export interface TaskConfig {
-
+    priority?: number;
+    status?: number;
 }
 
 export interface TaskDefinition {
